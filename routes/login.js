@@ -4,7 +4,7 @@ var router = express.Router();
 var crypto = require('crypto');
 
 var db = require("./db.js");
-// token
+// 引入token
 var jwt = require('jsonwebtoken');
 // Token 数据
 const payload = {
