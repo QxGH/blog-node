@@ -3,7 +3,6 @@ var router = express.Router();
 
 var db = require("./db.js");
 
-
 // index
 router.post('/', function(req, res, next) {
 	var pageNo= req.body.current,
