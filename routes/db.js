@@ -7,7 +7,8 @@ var mysql = require('mysql');
 var pool = mysql.createPool({
     host: 'localhost',
     user: 'root',
-    password: 'root',
+    password: '',
+	port: '3306',
     database: 'qinxus',
     insecureAuth: true,
 	multipleStatements: true
@@ -15,6 +16,7 @@ var pool = mysql.createPool({
 
 function query(sql, callback) {
     pool.getConnection(function (err, connection) {
+        // Use the connection
         connection.query(sql, function (err, rows) {
             callback(err, rows);
             connection.release();//释放链接
